@@ -1,0 +1,294 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiseTunes - Classic Music & Video Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            background-color: #f9e7e7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #8b0000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #ffe4e1;
+        }
+
+        nav {
+            background: #fff;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #8b0000;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .hero {
+            background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #00008b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #000066;
+        }
+
+        .content {
+            padding: 50px 20px;
+            background: #f9e7e7;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #8b0000;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .media-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .media-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .media-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .media-card h3 {
+            font-size: 1.2rem;
+            margin: 15px;
+            text-align: center;
+        }
+
+        .media-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0 15px 15px;
+            text-align: center;
+        }
+
+        footer {
+            background: #8b0000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to WiseTunes</h1>
+        <p>Your Classic Music and Video Experience</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#music">Classic Music</a></li>
+            <li class="dropdown">
+                <a href="#movies">Movies</a>
+                <div class="dropdown-content">
+                    <a href="#drama">Drama</a>
+                    <a href="#comedy">Comedy</a>
+                    <a href="#action">Action</a>
+                    <a href="#romance">Romance</a>
+                </div>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div>
+            <h2>Rediscover the Classics</h2>
+            <p>Experience timeless music and videos with WiseTunes.</p>
+            <a href="#music" class="cta-button">Explore Now</a>
+        </div>
+    </section>
+
+    <section class="content" id="music">
+        <h2 class="section-title">Classic Music</h2>
+        <div class="media-grid">
+            <div class="media-card">
+                <img src="https://via.placeholder.com/250x150" alt="Song Cover">
+                <h3>Symphony No. 5</h3>
+                <p>Ludwig van Beethoven</p>
+            </div>
+            <div class="media-card">
+                <img src="https://via.placeholder.com/250x150" alt="Song Cover">
+                <h3>Clair de Lune</h3>
+                <p>Claude Debussy</p>
+            </div>
+            <div class="media-card">
+                <img src="https://via.placeholder.com/250x150" alt="Song Cover">
+                <h3>Nessun Dorma</h3>
+                <p>Giacomo Puccini</p>
+            </div>
+            <div class="media-card">
+                <img src="https://via.placeholder.com/250x150" alt="Song Cover">
+                <h3>The Blue Danube</h3>
+                <p>Johann Strauss II</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content" id="movies">
+        <h2 class="section-title">Classic Movies</h2>
+        <div class="media-grid">
+            <div class="media-card">
+                <img src="https://via.placeholder.com/250x150" alt="Video Thumbnail">
+                <h3>Casablanca (1942)</h3>
+                <p>Humphrey Bogart</p>
+            </div>
+            <div class="media-card">
+                <img src="https://via.placeholder.com/250x150" alt="Video Thumbnail">
+                <h3>Gone with the Wind (1939)</h3>
+                <p>Vivien Leigh</p>
+            </div>
+            <div class="media-card">
+                <img src="https://via.placeholder.com/250x150" alt="Video Thumbnail">
+                <h3>The Godfather (1972)</h3>
+                <p>Marlon Brando</p>
+            </div>
+            <div class="media-card">
+                <img src="https://via.placeholder.com/250x150" alt="Video Thumbnail">
+                <h3>Lawrence of Arabia (1962)</h3>
+                <p>Peter O'Toole</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 WiseTunes. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+```
